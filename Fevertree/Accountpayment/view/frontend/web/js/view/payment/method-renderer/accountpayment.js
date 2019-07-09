@@ -59,7 +59,7 @@ define(
 
                 }
                 else if (successResponse == false) {
-                    var obj = JSON.parse(this.responseText)
+                    var obj = JSON.parse(this.responseText);
                     var messageResponse = obj.Message;
 
                     var labelB = document.getElementById('labelBalance');
