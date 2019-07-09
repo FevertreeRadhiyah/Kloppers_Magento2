@@ -225,6 +225,9 @@ define(
                     var password = document.getElementById('FTPassword').innerHTML;
                      var cartTotal = document.getElementById('orderT').innerHTML;
                     
+                    var sendOT = document.getElementById('SendOTP');
+                    sendOT.style.display = "none";
+
                      
 
                      console.log(cartTotal);
@@ -255,6 +258,9 @@ define(
 
                                }
                                else{
+
+                                       var sendOT = document.getElementById('SendOTP');
+                                       sendOT.style.display = "block";
                                         sendOTPFunc();
                                 }
 
@@ -297,6 +303,9 @@ define(
                  var labelB = document.getElementById('labelBalance');
                  labelB.style.display = "none";
 
+                  var sendOT = document.getElementById('pinverifybtn');
+                    sendOT.style.display = "none";
+
                 var inputValue = document.getElementById('OTP').value;
                 var cardIDNumber = document.getElementById('idNumber').value;
                 if (inputValue == "") {
@@ -318,7 +327,9 @@ define(
                         if (this.readyState === 4) {
                             // debugger;
                             console.log(this.responseText);
-                            var obj = JSON.parse(this.responseText)
+                            var obj = JSON.parse(this.responseText);
+                              var sendOT = document.getElementById('pinverifybtn');
+                              sendOT.style.display = "block";
 
                             var successResponse = obj.Success;
                             document.getElementById('pinSuccess').value = successResponse;
@@ -333,7 +344,10 @@ define(
                                  optBOX.style.borderColor = "red";
                       
                             } else {
-                                    var optBOX = document.getElementById('OTP');
+
+                               var sendOT = document.getElementById('pinverifybtn');
+                              sendOT.style.display = "block";
+                                var optBOX = document.getElementById('OTP');
                                  var OTPResults = document.getElementById('otpResult');
                                  otpResult.style.display = "block";
                                  otpResult.innerHTML = "Pin verified succesfully,You may continue and place your order";
